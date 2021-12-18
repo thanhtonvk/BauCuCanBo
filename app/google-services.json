@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "668810790673",
+    "firebase_url": "https://baucucanbo-default-rtdb.firebaseio.com",
+    "project_id": "baucucanbo",
+    "storage_bucket": "baucucanbo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668810790673:android:eb7519b208baeaecce6eb0",
+        "android_client_info": {
+          "package_name": "com.tk17_5.baucucanbo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668810790673-i56nbvl4veh65tstqjk8im6mof961iko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkJBqFhHEel-Xf2Z9mSxQRFOFWpuEmMQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668810790673-i56nbvl4veh65tstqjk8im6mof961iko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

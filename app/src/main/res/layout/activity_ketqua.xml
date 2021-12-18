@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".KetquaActivity"
+    android:weightSum="5"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Kết quả bầu cử"
+            android:textSize="30sp" />
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/tv_tong"/>
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:backgroundTint="#039BE5"
+                android:background="@drawable/border_top"
+                android:id="@+id/tv_lvt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Lê Văn Tới: " />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+            <TextView
+                android:background="#039BE5"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:id="@+id/tv_ttm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thiều Thị Mây " />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+            <TextView
+                android:background="#039BE5"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:id="@+id/tv_tth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trần Thị Hường: " />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+            <TextView
+                android:backgroundTint="#039BE5"
+                android:background="@drawable/border_bot"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:id="@+id/tv_lth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lê Thị Hường " />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/barchart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2" />
+</LinearLayout>

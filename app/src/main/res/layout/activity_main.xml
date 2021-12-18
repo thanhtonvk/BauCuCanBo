@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_wave"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Bầu chọn"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tv_masv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Nhập mã sinh viên"
+            android:inputType="number" />
+
+
+        <CheckBox
+            android:layout_marginLeft="20dp"
+            android:id="@+id/rd_lvt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lê Văn Tới" />
+
+        <CheckBox
+            android:layout_marginLeft="20dp"
+            android:id="@+id/rd_tth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trần Thị Hường" />
+
+        <CheckBox
+            android:layout_marginLeft="20dp"
+            android:id="@+id/rd_ttm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thiều Thị Mây" />
+
+        <CheckBox
+            android:layout_marginLeft="20dp"
+            android:id="@+id/rd_lth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lê Thị Hường" />
+
+
+        <Button
+            android:id="@+id/btn_binhchon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#039BE5"
+            android:text="Bầu chọn"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_ketqua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#FD4444"
+            android:text="Kết quả"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>
