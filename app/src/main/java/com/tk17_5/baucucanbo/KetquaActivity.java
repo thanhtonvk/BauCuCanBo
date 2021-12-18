@@ -9,25 +9,24 @@ import static com.tk17_5.baucucanbo.MainActivity.ttm;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.tk17_5.baucucanbo.Database.DBContext;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class KetquaActivity extends AppCompatActivity {
 
-    PieChart barChart;
+    BarChart barChart;
     DBContext dbContext;
     TextView tv_lvt, tv_tth, tv_ttm, tv_lth, tv_tong;
     MediaPlayer mediaPlayer;
@@ -36,40 +35,20 @@ public class KetquaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ketqua);
-        barChart = findViewById(R.id.barchart);
+        barChart = findViewById(R.id.chart);
         dbContext = new DBContext(KetquaActivity.this);
-
+        setBarChart();
         mediaPlayer = MediaPlayer.create(KetquaActivity.this, R.raw.theme);
         mediaPlayer.start();
         init();
         tv_lvt.setText("Lê Văn Tới: " + lvt + "/" + sum);
-        tv_lvt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setBarChart("Lê Văn Tới", lvt);
-            }
-        });
+
         tv_tth.setText("Trần Thị Hường: " + tth + "/" + sum);
-        tv_tth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setBarChart("Trần Thị Hường", tth);
-            }
-        });
+
         tv_ttm.setText("Thiều Thị Mây: " + ttm + "/" + sum);
-        tv_ttm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setBarChart("Thiều Thị Mây", ttm);
-            }
-        });
+
         tv_lth.setText("Lê Thị Hường: " + lth + "/" + sum);
-        tv_lth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setBarChart("Lê Thị Hường", lth);
-            }
-        });
+
         tv_tong.setText("Tổng đại biểu đã bầu: " + sum);
 
 
@@ -83,21 +62,33 @@ public class KetquaActivity extends AppCompatActivity {
         tv_tong = findViewById(R.id.tv_tong);
     }
 
-    private void setBarChart(String name, int count) {
-        ArrayList<PieEntry> visitors = new ArrayList<>();
-        visitors.add(new PieEntry((float) (count * 1.0 / sum * 100), name));
-        visitors.add(new PieEntry((float) (100 - (count * 1.0 / sum * 100)), "Khác"));
-        PieDataSet pieDataSet = new PieDataSet(visitors, "");
-        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        pieDataSet.setValueTextColor(Color.BLACK);
-        pieDataSet.setValueTextSize(16f);
-        PieData pieData = new PieData(pieDataSet);
-        barChart.setData(pieData);
-        barChart.getDescription().setEnabled(false);
-        DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(2);
-        String str = "Tỉ lệ bầu " + name + ": " + df.format(count * 1.0 / sum * 100) + "%";
-        barChart.setCenterText(str);
-        barChart.animate();
+    private void setBarChart() {
+        float ratioLVT = ((float)lvt/sum)*100;
+        float ratioTTH = ((float)tth/sum)*100;
+        float ratioTTM = ((float) ttm/sum)*100;
+        float ratioLTH = ((float) lth/sum)*100;
+        ArrayList<BarEntry> visitors = new ArrayList<>();
+
+        visitors.add(new BarEntry(2014,(int)ratioLVT ));
+        visitors.add(new BarEntry(2015, (int)ratioTTH));
+        visitors.add(new BarEntry(2016, (int)ratioTTM));
+        visitors.add(new BarEntry(2017, (int)ratioLTH));
+        BarDataSet barDataSet = new BarDataSet(visitors,"Bầu cử");
+        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        List<Integer> arr=new ArrayList<>();
+        for(int i = 0;i<ColorTemplate.MATERIAL_COLORS.length;i++){
+          arr.add(ColorTemplate.MATERIAL_COLORS[i]);
+        }
+        barDataSet.setValueTextColors(arr);
+
+        barDataSet.setValueTextSize(16f);
+        BarData barData = new BarData(barDataSet);
+        barChart.getDescription().setText("Bầu cử");
+        barChart.setFitBars(true);
+        barChart.setData(barData);
+        barChart.animateX(2000);
+        barChart.animateY(2000);
+        barChart.setHighlightFullBarEnabled(true);
+        barChart.setDrawBarShadow(true);
     }
 }
