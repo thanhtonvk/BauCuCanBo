@@ -38,31 +38,31 @@
 
 
         <CheckBox
-            android:layout_marginLeft="20dp"
             android:id="@+id/rd_lvt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Lê Văn Tới" />
 
         <CheckBox
-            android:layout_marginLeft="20dp"
             android:id="@+id/rd_tth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Trần Thị Hường" />
 
         <CheckBox
-            android:layout_marginLeft="20dp"
             android:id="@+id/rd_ttm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Thiều Thị Mây" />
 
         <CheckBox
-            android:layout_marginLeft="20dp"
             android:id="@+id/rd_lth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Cấn Công Cường" />
 
 
@@ -83,6 +83,17 @@
             android:layout_marginRight="20dp"
             android:background="#FD4444"
             android:text="Kết quả"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_danhsach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#43A047"
+            android:text="Danh sách bầu"
             android:textColor="@color/white" />
     </LinearLayout>
 </RelativeLayout>

@@ -24,9 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Kết quả bầu cử"
             android:textColor="#FFFFFF"
-            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -36,7 +34,7 @@
             android:layout_below="@id/tv"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView

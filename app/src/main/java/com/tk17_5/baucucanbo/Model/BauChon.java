@@ -2,7 +2,7 @@ package com.tk17_5.baucucanbo.Model;
 
 public class BauChon {
     private String idSV;
-    private boolean tvt,tth,ttm,lth;
+    private boolean tvt, tth, ttm, lth;
 
     public String getIdSV() {
         return idSV;
@@ -52,7 +52,26 @@ public class BauChon {
         this.ttm = ttm;
         this.lth = lth;
     }
-    public BauChon(){
 
+    public BauChon() {
+
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        if (tvt) {
+            str += "Lê Văn Tới\n";
+        }
+        if (tth) {
+            str += "Trần Thị Hường\n";
+        }
+        if (ttm) {
+            str += "Thiều Thị Mây\n";
+        }
+        if (lth) {
+            str += "Cấn Công Cường";
+        }
+        return idSV + " đã bầu: \n" + str;
     }
 }

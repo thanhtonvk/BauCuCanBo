@@ -90,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 loadData();
             }
         });
+        findViewById(R.id.btn_danhsach).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onPause();
+                startActivity(new Intent(getApplicationContext(),ListActivity.class));
+            }
+        });
     }
 
     private void init() {

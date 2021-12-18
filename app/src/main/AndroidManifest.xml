@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:screenOrientation="landscape"
-            android:name=".KetquaActivity"
+            android:name=".ListActivity"
             android:exported="true" />
+        <activity
+            android:name=".KetquaActivity"
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
