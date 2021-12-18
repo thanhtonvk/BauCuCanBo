@@ -3,106 +3,140 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    tools:context=".KetquaActivity"
-    android:weightSum="5">
+    android:weightSum="5"
+    tools:context=".KetquaActivity">
 
-    <LinearLayout
-        android:background="#80FFFFFF"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/ic_wave" />
+
         <TextView
-            android:layout_marginTop="50dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
+            android:id="@+id/tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Kết quả bầu cử"
-            android:textSize="30sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
         <TextView
-            android:layout_marginTop="50dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:gravity="center"
+            android:id="@+id/tv_tong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv"
+            android:gravity="center"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:id="@+id/tv_tong"/>
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="5dp"
+            android:id="@+id/cv"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_below="@id/tv_tong"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/lvt" />
+        </androidx.cardview.widget.CardView>
+
         <LinearLayout
-            android:layout_margin="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:backgroundTint="#43A047"
-                android:background="@drawable/border_top"
                 android:id="@+id/tv_lvt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Lê Văn Tới: " />
+                android:background="@drawable/border_top"
+                android:backgroundTint="#43A047"
+                android:gravity="center"
+                android:text="Lê Văn Tới: "
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
+
             <TextView
-                android:background="#FDD835"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:textColor="@color/white"
                 android:id="@+id/tv_ttm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thiều Thị Mây " />
+                android:background="#FDD835"
+                android:gravity="center"
+                android:text="Thiều Thị Mây "
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
+
             <TextView
-                android:background="#E53935"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:textColor="@color/white"
                 android:id="@+id/tv_tth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trần Thị Hường: " />
+                android:background="#E53935"
+                android:gravity="center"
+                android:text="Trần Thị Hường: "
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
+
             <TextView
-                android:backgroundTint="#039BE5"
-                android:background="@drawable/border_bot"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:textColor="@color/white"
                 android:id="@+id/tv_lth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lê Thị Hường " />
+                android:background="@drawable/border_bot"
+                android:backgroundTint="#039BE5"
+                android:gravity="center"
+                android:text="Cấn Công Cường "
+                android:textColor="@color/white"
+                android:textSize="20dp" />
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
-        android:background="#80FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:background="#80FFFFFF">
+
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/chart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"/>
+            android:layout_weight="2" />
     </LinearLayout>
 
 </LinearLayout>

@@ -6,9 +6,10 @@ import static com.tk17_5.baucucanbo.MainActivity.sum;
 import static com.tk17_5.baucucanbo.MainActivity.tth;
 import static com.tk17_5.baucucanbo.MainActivity.ttm;
 
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,6 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.tk17_5.baucucanbo.Database.DBContext;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class KetquaActivity extends AppCompatActivity {
@@ -42,17 +42,41 @@ public class KetquaActivity extends AppCompatActivity {
         mediaPlayer.start();
         init();
         tv_lvt.setText("Lê Văn Tới: " + lvt + "/" + sum);
-
+        tv_lvt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                img.setImageResource(R.drawable.lvt);
+            }
+        });
         tv_tth.setText("Trần Thị Hường: " + tth + "/" + sum);
-
+        tv_tth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                img.setImageResource(R.drawable.tth);
+            }
+        });
         tv_ttm.setText("Thiều Thị Mây: " + ttm + "/" + sum);
+        tv_ttm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                img.setImageResource(R.drawable.ttm);
+            }
+        });
 
-        tv_lth.setText("Lê Thị Hường: " + lth + "/" + sum);
+        tv_lth.setText("Cấn Công Cường: " + lth + "/" + sum);
+        tv_lth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                img.setImageResource(R.drawable.ccc);
+            }
+        });
 
         tv_tong.setText("Tổng đại biểu đã bầu: " + sum);
 
 
     }
+
+    ImageView img;
 
     private void init() {
         tv_lvt = findViewById(R.id.tv_lvt);
@@ -60,24 +84,25 @@ public class KetquaActivity extends AppCompatActivity {
         tv_ttm = findViewById(R.id.tv_ttm);
         tv_lth = findViewById(R.id.tv_lth);
         tv_tong = findViewById(R.id.tv_tong);
+        img = findViewById(R.id.image);
     }
 
     private void setBarChart() {
-        float ratioLVT = ((float)lvt/sum)*100;
-        float ratioTTH = ((float)tth/sum)*100;
-        float ratioTTM = ((float) ttm/sum)*100;
-        float ratioLTH = ((float) lth/sum)*100;
+        float ratioLVT = ((float) lvt / sum) * 100;
+        float ratioTTH = ((float) tth / sum) * 100;
+        float ratioTTM = ((float) ttm / sum) * 100;
+        float ratioLTH = ((float) lth / sum) * 100;
         ArrayList<BarEntry> visitors = new ArrayList<>();
 
-        visitors.add(new BarEntry(2014,(int)ratioLVT ));
-        visitors.add(new BarEntry(2015, (int)ratioTTH));
-        visitors.add(new BarEntry(2016, (int)ratioTTM));
-        visitors.add(new BarEntry(2017, (int)ratioLTH));
-        BarDataSet barDataSet = new BarDataSet(visitors,"Bầu cử");
+        visitors.add(new BarEntry(2014, (int) ratioLVT));
+        visitors.add(new BarEntry(2015, (int) ratioTTH));
+        visitors.add(new BarEntry(2016, (int) ratioTTM));
+        visitors.add(new BarEntry(2017, (int) ratioLTH));
+        BarDataSet barDataSet = new BarDataSet(visitors, "Bầu cử");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        List<Integer> arr=new ArrayList<>();
-        for(int i = 0;i<ColorTemplate.MATERIAL_COLORS.length;i++){
-          arr.add(ColorTemplate.MATERIAL_COLORS[i]);
+        List<Integer> arr = new ArrayList<>();
+        for (int i = 0; i < ColorTemplate.MATERIAL_COLORS.length; i++) {
+            arr.add(ColorTemplate.MATERIAL_COLORS[i]);
         }
         barDataSet.setValueTextColors(arr);
 
@@ -89,6 +114,5 @@ public class KetquaActivity extends AppCompatActivity {
         barChart.animateX(2000);
         barChart.animateY(2000);
         barChart.setHighlightFullBarEnabled(true);
-        barChart.setDrawBarShadow(true);
     }
 }
