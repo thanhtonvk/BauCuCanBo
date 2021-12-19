@@ -59,19 +59,7 @@ public class BauChon {
 
     @Override
     public String toString() {
-        String str = "";
-        if (tvt) {
-            str += "Lê Văn Tới\n";
-        }
-        if (tth) {
-            str += "Trần Thị Hường\n";
-        }
-        if (ttm) {
-            str += "Thiều Thị Mây\n";
-        }
-        if (lth) {
-            str += "Cấn Công Cường";
-        }
-        return idSV + " đã bầu: \n" + str;
+
+        return idSV + " đã bầu";
     }
 }
