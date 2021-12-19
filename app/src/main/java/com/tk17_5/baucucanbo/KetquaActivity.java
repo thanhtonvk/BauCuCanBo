@@ -41,21 +41,21 @@ public class KetquaActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(KetquaActivity.this, R.raw.theme);
         mediaPlayer.start();
         init();
-        tv_lvt.setText("Lê Văn Tới: " + lvt + "/" + sum);
+        tv_lvt.setText("Lê Văn Tới: " + lvt + "/" + 38);
         tv_lvt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 img.setImageResource(R.drawable.lvt);
             }
         });
-        tv_tth.setText("Trần Thị Hường: " + tth + "/" + sum);
+        tv_tth.setText("Trần Thị Hường: " + tth + "/" + 38);
         tv_tth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 img.setImageResource(R.drawable.tth);
             }
         });
-        tv_ttm.setText("Thiều Thị Mây: " + ttm + "/" + sum);
+        tv_ttm.setText("Thiều Thị Mây: " + ttm + "/" + 38);
         tv_ttm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +63,7 @@ public class KetquaActivity extends AppCompatActivity {
             }
         });
 
-        tv_lth.setText("Cấn Công Cường: " + lth + "/" + sum);
+        tv_lth.setText("Cấn Công Cường: " + lth + "/" + 38);
         tv_lth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,15 +88,15 @@ public class KetquaActivity extends AppCompatActivity {
     }
 
     private void setBarChart() {
-        float ratioLVT = ((float) lvt / sum) * 100;
-        float ratioTTH = ((float) tth / sum) * 100;
-        float ratioTTM = ((float) ttm / sum) * 100;
-        float ratioLTH = ((float) lth / sum) * 100;
+        float ratioLVT = ((float) lvt / 38) * 100;
+        float ratioTTH = ((float) tth / 38) * 100;
+        float ratioTTM = ((float) ttm / 38) * 100;
+        float ratioLTH = ((float) lth / 38) * 100;
         ArrayList<BarEntry> visitors = new ArrayList<>();
 
         visitors.add(new BarEntry(2014, (int) ratioLVT));
-        visitors.add(new BarEntry(2015, (int) ratioTTH));
-        visitors.add(new BarEntry(2016, (int) ratioTTM));
+        visitors.add(new BarEntry(2015, (int) ratioTTM));
+        visitors.add(new BarEntry(2016, (int) ratioTTH));
         visitors.add(new BarEntry(2017, (int) ratioLTH));
         BarDataSet barDataSet = new BarDataSet(visitors, "Bầu cử");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
